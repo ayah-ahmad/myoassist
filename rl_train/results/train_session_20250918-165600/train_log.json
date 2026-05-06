@@ -1,0 +1,83 @@
+{
+    "log_datas": [
+        {
+            "approx_kl": -1,
+            "clip_fraction": -1,
+            "clip_range": -1,
+            "clip_range_vf": -1,
+            "entropy_loss": -1,
+            "explained_variance": -1,
+            "learning_rate": -1,
+            "loss": -1,
+            "n_updates": -1,
+            "policy_gradient_loss": -1,
+            "std": -1,
+            "value_loss": -1,
+            "num_timesteps": 256,
+            "average_num_timestep": 2.056451612903226,
+            "average_reward_per_episode": 0.795824488564845,
+            "average_reward_dict_per_episode": {
+                "forward_reward": 2.241752853159284,
+                "muscle_activation_penalty": -2.0596342670888257,
+                "muscle_activation_diff_penalty": 2.6375655987920372,
+                "foot_force_penalty": -4.393368552978559,
+                "joint_constraint_force_penalty": -0.6391811234988644,
+                "muscle_activation_penalty_per_step": -0.4810152999812313,
+                "average_velocity_per_step": -0.026735279656385325,
+                "footstep_delta_time": 0.06077956989247311,
+                "qpos_imitation_rewards": 12.481498271783313,
+                "qvel_imitation_rewards": 0.36919832319966445,
+                "end_effector_imitation_reward": 4.159139784946231,
+                "sparse": 0.0,
+                "solved": 0.0,
+                "done": 0.0,
+                "dense": 48.510722169496084
+            },
+            "time": "20250918-165604.428252",
+            "reward_accumulate": {
+                "forward_reward": 4.697022218707637,
+                "muscle_activation_penalty": -4.210585592631203,
+                "muscle_activation_diff_penalty": 5.394714790393142,
+                "footstep_delta_time": 0.121111111111111,
+                "average_velocity_per_step": -0.045970360441524055,
+                "muscle_activation_penalty_per_step": -0.9676025554070379,
+                "joint_constraint_force_penalty": -1.326012528230107,
+                "foot_force_penalty": -9.035039024255296,
+                "qpos_imitation_rewards": 25.468920752413343,
+                "qvel_imitation_rewards": 0.7633614846146956,
+                "end_effector_imitation_reward": 8.533333333333314
+            },
+            "reward_weights": {
+                "forward_reward": 1.0,
+                "muscle_activation_penalty": 0.1,
+                "muscle_activation_diff_penalty": 0.1,
+                "footstep_delta_time": 0.0,
+                "average_velocity_per_step": 0.0,
+                "muscle_activation_penalty_per_step": 0.0,
+                "joint_constraint_force_penalty": 1.0,
+                "foot_force_penalty": 0.5,
+                "qpos_imitation_rewards": {
+                    "pelvis_ty": 0.1,
+                    "pelvis_tilt": 1.0,
+                    "hip_flexion_l": 0.2,
+                    "hip_flexion_r": 0.2,
+                    "knee_angle_l": 1.0,
+                    "knee_angle_r": 1.0,
+                    "ankle_angle_l": 0.2,
+                    "ankle_angle_r": 0.2
+                },
+                "qvel_imitation_rewards": {
+                    "pelvis_ty": 0.1,
+                    "pelvis_tilt": 0.1,
+                    "hip_flexion_l": 0.2,
+                    "hip_flexion_r": 0.2,
+                    "knee_angle_l": 0.1,
+                    "knee_angle_r": 0.1,
+                    "ankle_angle_l": 0.1,
+                    "ankle_angle_r": 0.1
+                },
+                "end_effector_imitation_reward": 0.0
+            }
+        }
+    ]
+}
