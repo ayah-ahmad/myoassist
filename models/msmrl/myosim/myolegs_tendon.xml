@@ -1,0 +1,126 @@
+<mujocoinclude model="MyoLegs_v0.0.1">
+    <tendon>
+        <spatial name="addlong_r_tendon" springlength="0.131799">
+            <site site="addlong_r-P1"/>
+            <geom geom="AL_at_femshaft_r_wrap" sidesite="AL_at_femshaft_r_site_addlong_r_side"/>
+            <site site="addlong_r-P2"/>
+        </spatial>
+        <spatial name="bflh_r_tendon" springlength="0.325227">
+            <site site="bflh_r-P1"/>
+            <site site="bflh_r-P2"/>
+            <site site="bflh_r-P3"/>
+        </spatial>
+        <spatial name="gasmed_r_tendon" springlength="0.398716">
+            <site site="gasmed_r-P1"/>
+            <geom geom="GasMed_at_shank_r_wrap" sidesite="GasMed_at_shank_r_site_gasmed_r_side"/>
+            <site site="gasmed_r-P2"/>
+        </spatial>
+        <spatial name="iliacus_r_tendon" springlength="0.0961207">
+            <site site="iliacus_r-P1"/>
+            <site site="iliacus_r-P2"/>
+            <geom geom="IL_at_brim_r_wrap" sidesite="IL_at_brim_r_site_iliacus_r_side"/>
+            <site site="iliacus_r-P3"/>
+            <site site="iliacus_r-P4"/>
+        </spatial>
+        <spatial name="psoas_r_tendon" springlength="0.0995432">
+            <site site="psoas_r-P1"/>
+            <site site="psoas_r-P2"/>
+            <!-- <geom geom="PS_at_brim_r_wrap" sidesite="PS_at_brim_r_site_psoas_r_side"/> -->
+            <site site="psoas_r-P3"/>
+            <site site="psoas_r-P4"/>
+        </spatial>
+        <spatial name="recfem_r_tendon" springlength="0.448494">
+            <site site="recfem_r-P1"/>
+            <geom geom="KnExt_at_fem_r_wrap" sidesite="KnExt_at_fem_r_site_recfem_r_side"/>
+            <site site="recfem_r-P2"/>
+            <site site="recfem_r-P3"/>
+            <site site="recfem_r-P4"/>
+            <site site="recfem_r-P5"/>
+        </spatial>
+        <spatial name="sart_r_tendon" springlength="0.124">
+            <site site="sart_r-P1"/>
+            <site site="sart_r-P2"/>
+            <site site="sart_r-P3"/>
+            <site site="sart_r-P4"/>
+            <site site="sart_r-P5"/>
+        </spatial>
+        <spatial name="semimem_r_tendon" springlength="0.347586">
+            <site site="semimem_r-P1"/>
+            <geom geom="SM_at_condyles_r_wrap" sidesite="SM_at_condyles_r_site_semimem_r_side"/>
+            <site site="semimem_r-P2"/>
+        </spatial>
+        <spatial name="soleus_r_tendon" springlength="0.276756">
+            <site site="soleus_r-P1"/>
+            <site site="soleus_r-P2"/>
+        </spatial>
+        <spatial name="vaslat_r_tendon" springlength="0.220601">
+            <site site="vaslat_r-P1"/>
+            <site site="vaslat_r-P2"/>
+            <geom geom="KnExt_at_fem_r_wrap" sidesite="KnExt_at_fem_r_site_vaslat_r_side"/>
+            <site site="vaslat_r-P3"/>
+            <site site="vaslat_r-P4"/>
+            <site site="vaslat_r-P5"/>
+        </spatial>
+        <spatial name="addlong_l_tendon" springlength="0.131799">
+            <site site="addlong_l-P1"/>
+            <geom geom="AL_at_femshaft_l_wrap" sidesite="AL_at_femshaft_l_site_addlong_l_side"/>
+            <site site="addlong_l-P2"/>
+        </spatial>
+        <spatial name="bflh_l_tendon" springlength="0.325227">
+            <site site="bflh_l-P1"/>
+            <site site="bflh_l-P2"/>
+            <site site="bflh_l-P3"/>
+        </spatial>
+        <spatial name="gasmed_l_tendon" springlength="0.398716">
+            <site site="gasmed_l-P1"/>
+            <geom geom="GasMed_at_shank_l_wrap" sidesite="GasMed_at_shank_l_site_gasmed_l_side"/>
+            <site site="gasmed_l-P2"/>
+        </spatial>
+        <spatial name="iliacus_l_tendon" springlength="0.0961207">
+            <site site="iliacus_l-P1"/>
+            <site site="iliacus_l-P2"/>
+            <geom geom="IL_at_brim_l_wrap" sidesite="IL_at_brim_l_site_iliacus_l_side"/>
+            <site site="iliacus_l-P3"/>
+            <site site="iliacus_l-P4"/>
+        </spatial>
+        <spatial name="psoas_l_tendon" springlength="0.0995432">
+            <site site="psoas_l-P1"/>
+            <site site="psoas_l-P2"/>
+            <!-- <geom geom="PS_at_brim_l_wrap" sidesite="PS_at_brim_l_site_psoas_l_side"/> -->
+            <site site="psoas_l-P3"/>
+            <site site="psoas_l-P4"/>
+        </spatial>
+        <spatial name="recfem_l_tendon" springlength="0.448494">
+            <site site="recfem_l-P1"/>
+            <geom geom="KnExt_at_fem_l_wrap" sidesite="KnExt_at_fem_l_site_recfem_l_side"/>
+            <site site="recfem_l-P2"/>
+            <site site="recfem_l-P3"/>
+            <site site="recfem_l-P4"/>
+            <site site="recfem_l-P5"/>
+        </spatial>
+        <spatial name="sart_l_tendon" springlength="0.124">
+            <site site="sart_l-P1"/>
+            <site site="sart_l-P2"/>
+            <site site="sart_l-P3"/>
+            <site site="sart_l-P4"/>
+            <site site="sart_l-P5"/>
+        </spatial>
+        <spatial name="semimem_l_tendon" springlength="0.347586">
+            <site site="semimem_l-P1"/>
+            <geom geom="SM_at_condyles_l_wrap" sidesite="SM_at_condyles_l_site_semimem_l_side"/>
+            <site site="semimem_l-P2"/>
+        </spatial>
+        <spatial name="soleus_l_tendon" springlength="0.276756">
+            <site site="soleus_l-P1"/>
+            <site site="soleus_l-P2"/>
+        </spatial>
+        <spatial name="vaslat_l_tendon" springlength="0.220601">
+            <site site="vaslat_l-P1"/>
+            <site site="vaslat_l-P2"/>
+            <geom geom="KnExt_at_fem_l_wrap" sidesite="KnExt_at_fem_l_site_vaslat_l_side"/>
+            <site site="vaslat_l-P3"/>
+            <site site="vaslat_l-P4"/>
+            <site site="vaslat_l-P5"/>
+        </spatial>
+    </tendon>
+</mujocoinclude>

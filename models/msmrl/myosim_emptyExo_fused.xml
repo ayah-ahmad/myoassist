@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="Maegan_Tucker_emptyExo">
+
+    <include file="model_assets.xml"/>
+
+   <worldbody>
+      <light directional="false" diffuse=".5 .5 .5" specular="0.25 0.25 0.25" pos="0 -3 3" dir="0 1 -1" mode="trackcom"/>
+      <camera name="side_view" pos="-3 0 2.25" xyaxes="0 -1 0 1 0 2" mode="trackcom"/>
+      <camera name="front_view" pos="0 -3 2.25" xyaxes="1 0 0 0 1 2" mode="trackcom"/>
+      <geom name="floor" pos="0 0 0" size="7 7 .1" conaffinity="0" contype="0" type="plane" material="matfloor"/>
+
+      <!-- SCENE -->
+      <geom type="mesh" pos="0 0 0" mesh="meshscene" material="matscene" conaffinity="0" contype="0"/>
+      <geom type="mesh" mesh="logo" material="matlogo" group="1" conaffinity="0" contype="0" euler="1.57 0 0" pos="0 6.95 2.1"/>
+
+      <body name="exotorso" pos="0 0 0">
+            <include file="atalante/myosim_empty_exo.xml"/>
+            <body name="root" pos="0.06 0 0.08" euler="0 0 0">
+                  <include file="myosim/myotorso_abdomen_chain.xml"/>
+                  <include file="myosim/myolegs_chain.xml"/>
+            </body>
+      </body>
+   </worldbody>
+
+   <!-- <contact>
+      <pair condim="4" friction="1 1 0.005 0.0001 0.0001" geom1="left_sole" geom2="floor"
+            margin="0.0015"/>
+      <pair condim="4" friction="1 1 0.005 0.0001 0.0001" geom1="right_sole" geom2="floor"
+            margin="0.0015"/>
+      <pair condim="4" friction="1 1 0.005 0.0001 0.0001" geom1="left_toe" geom2="floor"
+            margin="0.0015"/>
+      <pair condim="4" friction="1 1 0.005 0.0001 0.0001" geom1="right_toe" geom2="floor"
+            margin="0.0015"/>
+      <pair condim="4" friction="1 1 0.005 0.0001 0.0001" geom1="left_heel" geom2="floor"
+            margin="0.0015"/>
+      <pair condim="4" friction="1 1 0.005 0.0001 0.0001" geom1="right_heel" geom2="floor"
+            margin="0.0015"/>
+   </contact> -->
+
+   <actuator>
+      <position joint="rootx" name="rootx_actuator" kp="500000" kv="1000"/>
+      <position joint="rooty" name="rooty_actuator" kp="500000" kv="1000"/>
+      <position joint="rootz" name="rootz_actuator" kp="500000" kv="1000"/>
+      <position joint="rootroll" name="rootroll_actuator" kp="100000" kv="100"/>
+      <position joint="rootpitch" name="rootpitch_actuator" kp="100000" kv="100"/>
+      <position joint="rootyaw" name="rootyaw_actuator" kp="100000" kv="100"/>
+   </actuator>
+
+   <actuator>
+   <!-- Exoskeleton actuators - gain-scaled for RL policy output in [-1, 1] -->
+
+   <!-- LEFT LEG -->
+   <general biasprm="0 0 0" gainprm="350 0 0" dynprm="1 0 0"
+            biastype="none" gaintype="fixed" dyntype="none"
+            joint="LeftFrontalHipJoint"    name="Exo_LeftFrontalHip"
+            gear="1.0" ctrlrange="-1 1" ctrllimited="true"/>
+
+   <general biasprm="0 0 0" gainprm="180 0 0" dynprm="1 0 0"
+            biastype="none" gaintype="fixed" dyntype="none"
+            joint="LeftTransverseHipJoint" name="Exo_LeftTransverseHip"
+            gear="1.0" ctrlrange="-1 1" ctrllimited="true"/>
+
+   <general biasprm="0 0 0" gainprm="219 0 0" dynprm="1 0 0"
+            biastype="none" gaintype="fixed" dyntype="none"
+            joint="LeftSagittalHipJoint"   name="Exo_LeftSagittalHip"
+            gear="1.0" ctrlrange="-1 1" ctrllimited="true"/>
+
+   <general biasprm="0 0 0" gainprm="219 0 0" dynprm="1 0 0"
+            biastype="none" gaintype="fixed" dyntype="none"
+            joint="LeftSagittalKneeJoint"  name="Exo_LeftSagittalKnee"
+            gear="1.0" ctrlrange="-1 1" ctrllimited="true"/>
+
+   <general biasprm="0 0 0" gainprm="184 0 0" dynprm="1 0 0"
+            biastype="none" gaintype="fixed" dyntype="none"
+            joint="LeftSagittalAnkleJoint" name="Exo_LeftSagittalAnkle"
+            gear="1.0" ctrlrange="-1 1" ctrllimited="true"/>
+
+   <general biasprm="0 0 0" gainprm="82 0 0" dynprm="1 0 0"
+            biastype="none" gaintype="fixed" dyntype="none"
+            joint="LeftHenkeAnkleJoint"    name="Exo_LeftHenkeAnkle"
+            gear="1.0" ctrlrange="-1 1" ctrllimited="true"/>
+
+   <!-- RIGHT LEG -->
+   <general biasprm="0 0 0" gainprm="350 0 0" dynprm="1 0 0"
+            biastype="none" gaintype="fixed" dyntype="none"
+            joint="RightFrontalHipJoint"    name="Exo_RightFrontalHip"
+            gear="1.0" ctrlrange="-1 1" ctrllimited="true"/>
+
+   <general biasprm="0 0 0" gainprm="180 0 0" dynprm="1 0 0"
+            biastype="none" gaintype="fixed" dyntype="none"
+            joint="RightTransverseHipJoint" name="Exo_RightTransverseHip"
+            gear="1.0" ctrlrange="-1 1" ctrllimited="true"/>
+
+   <general biasprm="0 0 0" gainprm="219 0 0" dynprm="1 0 0"
+            biastype="none" gaintype="fixed" dyntype="none"
+            joint="RightSagittalHipJoint"   name="Exo_RightSagittalHip"
+            gear="1.0" ctrlrange="-1 1" ctrllimited="true"/>
+
+   <general biasprm="0 0 0" gainprm="219 0 0" dynprm="1 0 0"
+            biastype="none" gaintype="fixed" dyntype="none"
+            joint="RightSagittalKneeJoint"  name="Exo_RightSagittalKnee"
+            gear="1.0" ctrlrange="-1 1" ctrllimited="true"/>
+
+   <general biasprm="0 0 0" gainprm="184 0 0" dynprm="1 0 0"
+            biastype="none" gaintype="fixed" dyntype="none"
+            joint="RightSagittalAnkleJoint" name="Exo_RightSagittalAnkle"
+            gear="1.0" ctrlrange="-1 1" ctrllimited="true"/>
+
+   <general biasprm="0 0 0" gainprm="82 0 0" dynprm="1 0 0"
+            biastype="none" gaintype="fixed" dyntype="none"
+            joint="RightHenkeAnkleJoint"    name="Exo_RightHenkeAnkle"
+            gear="1.0" ctrlrange="-1 1" ctrllimited="true"/>
+</actuator>
+   <sensor>
+      <!-- <touch name="opto1" site="opto1"/>
+      <touch name="opto2" site="opto2"/>
+      <touch name="opto3" site="opto3"/>
+      <touch name="opto4" site="opto4"/>
+      <touch name="opto5" site="opto5"/>
+      <touch name="opto6" site="opto6"/>
+      <touch name="opto7" site="opto7"/>
+      <touch name="opto8" site="opto8"/> -->
+      
+      <framequat name="pelvis-orientation" objname="pelvis_imu" objtype="site"/>
+      <gyro name="pelvis-angular-velocity" noise="5e-4" site="pelvis_imu"/>
+      <framelinvel objtype="site" objname="pelvis_imu" name="global_linvel"/>
+      <framezaxis objtype="site" objname="pelvis_imu" name="upvector"/>
+      <velocimeter site="pelvis_imu" name="local_linvel"/>
+
+      <accelerometer name="pelvis-linear-acceleration" noise="1e-2" site="pelvis_imu"/>
+      <framequat name="thorax-orientation" objname="thorax_imu" objtype="site"/>
+      <gyro name="thorax-angular-velocity" noise="5e-4" site="thorax_imu"/>
+      <accelerometer name="thorax-linear-acceleration" noise="1e-2" site="thorax_imu"/>
+      <framequat name="left_tibia-orientation" objname="left_tibia_imu" objtype="site"/>
+      <gyro name="left_tibia-angular-velocity" noise="5e-4" site="left_tibia_imu"/>
+      <accelerometer name="left_tibia-linear-acceleration" noise="1e-2" site="left_tibia_imu"/>
+      <framequat name="right_tibia-orientation" objname="right_tibia_imu" objtype="site"/>
+      <gyro name="right_tibia-angular-velocity" noise="5e-4" site="right_tibia_imu"/>
+      <accelerometer name="right_tibia-linear-acceleration" noise="1e-2" site="right_tibia_imu"/>
+      <framequat name="left_foot-orientation" objname="left_foot_imu" objtype="site"/>
+      <gyro name="left_foot-angular-velocity" noise="5e-4" site="left_foot_imu"/>
+      <accelerometer name="left_foot-linear-acceleration" noise="1e-2" site="left_foot_imu"/>
+      <framequat name="right_foot-orientation" objname="right_foot_imu" objtype="site"/>
+      <gyro name="right_foot-angular-velocity" noise="5e-4" site="right_foot_imu"/>
+      <accelerometer name="right_foot-linear-acceleration" noise="1e-2" site="right_foot_imu"/>
+
+      <framelinvel name="left_foot_linvel" objtype="site" objname="left_foot_imu"/>
+      <frameangvel name="left_foot_angvel" objtype="site" objname="left_foot_imu"/>
+      <framelinvel name="right_foot_linvel" objtype="site" objname="right_foot_imu"/>
+      <frameangvel name="right_foot_angvel" objtype="site" objname="right_foot_imu"/>
+
+   </sensor>
+
+    <include file="myosim/myotorso_abdomen_assets_nomuscles.xml"/>
+    <include file="myosim/myolegs_assets.xml"/>
+    <include file="myosim/myolegs_tendon.xml"/>
+    <include file="myosim/myolegs_muscle.xml"/>
+
+  
+   <equality> 
+      <weld name="TorsoWeld" body1="exotorso" body2="torso" anchor="0 0 0"/>=
+   </equality>
+   
+   <tendon>
+    <spatial name="left_thigh_back_strap" group="4" width="0.02" stiffness="1e5" damping="50">
+        <site site="left_thigh_cuff_back"/>
+        <site site="human_lthigh_back"/>
+    </spatial>
+    <spatial name="left_thigh_front_strap" group="4" width="0.02" stiffness="1e5" damping="50">
+        <site site="left_thigh_cuff_front"/>
+        <site site="human_lthigh_front"/>
+    </spatial>
+
+    <spatial name="left_shin_front_strap" group="4" width="0.02" stiffness="1e5" damping="50">
+        <site site="left_shin_cuff_front"/>
+        <site site="human_lknee_front"/>
+    </spatial>
+
+    <spatial name="left_shin_back_strap" group="4" width="0.02" stiffness="1e5" damping="50">
+        <site site="left_shin_cuff_back"/>
+        <site site="human_lknee_back"/>
+    </spatial>
+    <spatial name="left_shin_outer_strap" group="4" width="0.02" stiffness="1e5" damping="50">
+        <site site="left_shin_cuff_outer"/>
+        <site site="human_lknee_outer"/>
+    </spatial>
+
+    <spatial name="lheel" group="4" width="0.02" stiffness="1e5" damping="50">
+        <site site="exo_lheel"/>
+        <site site="human_lfoot"/>
+    </spatial>
+    <spatial name="ltoe_left" group="4" width="0.02" stiffness="1e5" damping="50">
+        <site site="exo_ltoe_left"/>
+        <site site="human_ltoe_left"/>
+    </spatial>
+    <spatial name="ltoe_right" group="4" width="0.02" stiffness="1e5" damping="50">
+        <site site="exo_ltoe_right"/>
+        <site site="human_ltoe_right"/>
+    </spatial>
+
+    <spatial name="right_thigh_back_strap" group="4" width="0.02" stiffness="1e5" damping="50">
+        <site site="right_thigh_cuff_back"/>
+        <site site="human_rthigh_back"/>
+    </spatial>
+
+    <spatial name="right_thigh_front_strap" group="4" width="0.02" stiffness="1e5" damping="50">
+        <site site="right_thigh_cuff_front"/>
+        <site site="human_rthigh_front"/>
+    </spatial>
+
+    <spatial name="right_shin_front_strap" group="4" width="0.02" stiffness="1e5" damping="50">
+        <site site="right_shin_cuff_front"/>
+        <site site="human_rknee_front"/>
+    </spatial>
+
+    <spatial name="right_shin_outer_strap" group="4" width="0.02" stiffness="1e5" damping="50">
+        <site site="right_shin_cuff_outer"/>
+        <site site="human_rknee_outer"/>
+    </spatial>
+
+    <spatial name="right_shin_back_strap" group="4" width="0.02" stiffness="1e5" damping="50">
+        <site site="right_shin_cuff_back"/>
+        <site site="human_rknee_back"/>
+    </spatial>
+
+    <spatial name="rheel" group="4" width="0.02" stiffness="1e5" damping="50">
+        <site site="exo_rheel"/>
+        <site site="human_rfoot"/>
+    </spatial>
+    <spatial name="rtoe_left" group="4" width="0.02" stiffness="1e5" damping="50">
+        <site site="exo_rtoe_left"/>
+        <site site="human_rtoe_left"/>
+    </spatial>
+    <spatial name="rtoe_right" group="4" width="0.02" stiffness="1e5" damping="50">
+        <site site="exo_rtoe_right"/>
+        <site site="human_rtoe_right"/>
+    </spatial>
+    
+   </tendon>
+   
+   <!-- <equality> 
+      <weld name="rightShankWeld" body1="RightSagittalKneeLink" body2="tibia_r" anchor="0 0 0"/>
+      <weld name="leftShankWeld" body1="LeftSagittalKneeLink" body2="tibia_l" anchor="0 0 0"/>
+      <weld name="rightThighWeld" body1="RightSagittalHipLink" body2="femur_r" anchor="0 0 0"/>
+      <weld name="leftThighWeld" body1="LeftSagittalHipLink" body2="femur_l" anchor="0 0 0"/>
+   </equality> -->
+
+</mujoco>
